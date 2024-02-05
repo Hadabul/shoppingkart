@@ -1,0 +1,8 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Product List</h2>
+  {% for product in products %}
+    <p>{{ product.name }} - ${{ product.price }} <a href="{% url 'purchase_product' product.id %}">Purchase</a></p>
+  {% endfor %}
+{% endblock %}

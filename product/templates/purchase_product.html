@@ -1,0 +1,14 @@
+<!-- purchase_product.html -->
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Purchase {{ product.name }}</h2>
+  {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+  {% endif %}
+  <form method="post" action="">
+    {% csrf_token %}
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" value="1" min="1" required>
+    <input type="submit" value="Purchase">
+  </form>
+{% endblock %}

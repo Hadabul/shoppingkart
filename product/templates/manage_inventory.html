@@ -1,0 +1,12 @@
+<!-- manage_inventory.html -->
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Manage Inventory - {{ product.name }}</h2>
+  <p>Current Stock Quantity: {{ product.inventory.stock_quantity }}</p>
+  <form method="post" action="">
+    {% csrf_token %}
+    <label for="stock_quantity">New Stock Quantity:</label>
+    <input type="number" name="stock_quantity" value="{{ product.inventory.stock_quantity }}" required>
+    <input type="submit" value="Update Inventory">
+  </form>
+{% endblock %}
