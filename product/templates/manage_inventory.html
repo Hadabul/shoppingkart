@@ -3,7 +3,7 @@
 {% block content %}
   <h2>Manage Inventory - {{ product.name }}</h2>
   <p>Current Stock Quantity: {{ product.inventory.stock_quantity }}</p>
-  <form method="post" action="">
+  <form method="post" action="{% url 'update_inventory' product.id %}">
     {% csrf_token %}
     <label for="stock_quantity">New Stock Quantity:</label>
     <input type="number" name="stock_quantity" value="{{ product.inventory.stock_quantity }}" required>

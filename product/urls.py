@@ -1,6 +1,6 @@
 # urls.py
 from django.urls import path
-from .views import home, purchase_product, manage_inventory, add_product_page, product_list, add_product
+from .views import home, purchase_product, manage_inventory, add_product_page, product_list, add_product, update_inventory
 from product import views
 
 urlpatterns = [
@@ -15,6 +15,7 @@ urlpatterns = [
     path('manage_inventory/<int:product_id>/', manage_inventory, name='manage_inventory'),
     path('add_product_page/', add_product_page, name='add_product_page'),
     path('add_product', add_product, name='add_product'),
+    path('update_inventory/<int:product_id>/', update_inventory, name='update_inventory'),
 
     #Customer
     path('home/', home, name='home'),

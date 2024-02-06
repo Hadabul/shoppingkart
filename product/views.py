@@ -39,6 +39,7 @@ def home(request):
 def LoginPage(request):
     return render(request, 'login.html')
 
+
 def login(request):
     if request.method == 'POST':
         uname = request.POST.get('email')
@@ -112,4 +113,18 @@ def add_product(request):
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'product_list.html', {'products': products})
+
+def update_inventory(request, product_id):
+    product = Product.objects.get(pk=product_id)
+    
+    if request.method == 'POST':
+        quantity = request.POST.get('stock_quantity')
+        product.inventory.stock_quantity = int(quantity) + int(product.inventory.stock_quantity)
+        product.inventory.save()
+        
+        return redirect('product_list')
+    else:
+        pass
+
+    return render(request, 'update_inventory.html', {'form': form, 'product': product})
 

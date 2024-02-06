@@ -10,7 +10,8 @@
                     <strong>{{ product.name }}</strong>
                     <p>{{ product.description }}</p>
                     <p>Price: ${{ product.price }}</p>
-                    <!-- You can add more information as needed -->
+                    <p>Qty: {{ product.inventory.stock_quantity}}</p>
+                    <a href="{% url 'manage_inventory' product.id %}"> add stock</a>
                 </li>
             {% endfor %}
         </ul>
