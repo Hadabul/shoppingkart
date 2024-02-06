@@ -16,3 +16,14 @@ class Order(models.Model):
 class Inventory(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, related_name='inventory')
     stock_quantity = models.PositiveIntegerField(default=0)
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=150)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=128)  
+    confirm_password = models.CharField(max_length=128)
+    role = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.user.username
