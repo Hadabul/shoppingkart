@@ -29,9 +29,9 @@ You can then access the web application at http://127.0.0.1:8000/
 # Features
 ## Some of the main features of this project are:
 
-User authentication and authorization
-Product listing and filtering
-Product search and pagination
-Shopping cart and checkout
-Order history and status
-Admin panel for managing products, orders, and users
+* User authentication and authorization
+* Product listing and filtering
+* Product search and pagination
+* Shopping cart and checkout
+* Order history and status
+* Admin panel for managing products, orders, and users
